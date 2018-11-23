@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">TrainAppRemaster</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    }
+    <string name="title_hoy">Hoy</string>
+    <string name="title_estadisticas">Estadisticas</string>
+    <string name="title_planes">Planes</string>
+    <string name="title_config">Configuracion</string>
+    <string name="rutinadelDia">Rutina del dia:</string>
 </resources>

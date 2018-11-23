@@ -2,4 +2,11 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="fragment_principal_height">400dp</dimen>
+    <dimen name="button_play_dim">16dp</dimen>
+
+
+
 </resources>
