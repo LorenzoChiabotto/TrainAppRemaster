@@ -6,4 +6,7 @@
     <string name="title_planes">Planes</string>
     <string name="title_config">Configuracion</string>
     <string name="rutinadelDia">Rutina del dia:</string>
+    <string name="faltaelementos">No existen [rut/est] crea una para iniciar</string>
+    <string name="title_rutinas">Rutinas</string>
+    <string name="title_perfil">Perfil</string>
 </resources>

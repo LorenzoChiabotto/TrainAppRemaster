@@ -20,25 +20,29 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
             switch (item.getItemId()) {
-                case R.id.navigation_hoy:
+                case R.id.navigation_hoy:{
                     transaction.replace(R.id.layoutPrincipal, new HoyFragment());
-                    transaction.addToBackStack(null);
-                    transaction.commit();
-
-                    return true;
-                case R.id.navigation_estadisticas:
-                    transaction.replace(0,null);
-                    return true;
-                case R.id.navigation_planes:
-                    transaction.replace(0,null);
-
-                    return true;
-                case R.id.navigation_configuracion:
-                    transaction.replace(0,null);
-
-                    return true;
+                    break;
+                }
+                case R.id.navigation_estadisticas:{
+                    transaction.replace(R.id.layoutPrincipal, new EstadisticasFragment());
+                    break;
+                }
+                case R.id.navigation_rutinas:{
+                    transaction.replace(R.id.layoutPrincipal, new RutinasFragment());
+                    break;
+                }
+                case R.id.navigation_configuracion:{
+                    transaction.replace(R.id.layoutPrincipal, new HoyFragment());
+                    break;
+                }
+                default:
+                    return false;
             }
-            return false;
+
+            transaction.addToBackStack(null);
+            transaction.commit();
+            return true;
         }
     };
 
