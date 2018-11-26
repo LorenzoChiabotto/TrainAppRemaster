@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryLigth">#00B8A4</color>
+    <color name="colorPrimaryLigthLigth">#88F5DA</color>
+    <color name="colorPrimaryDark">#00574b</color>
 
 
     <color name="colorAccent">#00A943</color>
 
     <color name="bcDiseño">#D81B60</color>
+
+
+    <color name="colorPlay">#00A90B</color>
+    <color name="colorDetener">#BD0D00</color>
+    <color name="colorPause">#E07300</color>
 </resources>

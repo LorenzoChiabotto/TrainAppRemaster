@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">TrainAppRemaster</string>
-    }
+
     <string name="title_hoy">Hoy</string>
     <string name="title_estadisticas">Estadisticas</string>
     <string name="title_planes">Planes</string>
     <string name="title_config">Configuracion</string>
-    <string name="rutinadelDia">Rutina del dia:</string>
-    <string name="faltaelementos">No existen [rut/est] crea una para iniciar</string>
     <string name="title_rutinas">Rutinas</string>
     <string name="title_perfil">Perfil</string>
+
+    <string name="rutinadelDia">Rutina del dia:</string>
+    <string name="faltaelementos">No existen [rut/est] crea una para iniciar</string>
+
+
+    <string name="iniciar">Iniciar</string>
+    <string name="pausar">Pausar</string>
+    <string name="reanudar">Reanudar</string>
+    <string name="detener">Detener</string>
+    <string name="tiempo">Tiempo</string>
+    <string name="distancia">Distancia</string>
+    <string name="velocidad">Velocidad</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.lorenzoch.trainappremaster;
+package com.lorenzoch.trainappremaster.pantallas;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class EstadisticasFragment extends Fragment {
+import com.lorenzoch.trainappremaster.R;
+
+public class RutinasFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_list, container,false);
+        View view = inflater.inflate(R.layout.fragment_list_button, container,false);
 
         return view;
     }

@@ -1,4 +1,4 @@
-package com.lorenzoch.trainappremaster;
+package com.lorenzoch.trainappremaster.pantallas;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,7 +6,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
+
+import com.lorenzoch.trainappremaster.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 case R.id.navigation_configuracion:{
                     transaction.replace(R.id.layoutPrincipal, new HoyFragment());
+                    break;
+                }
+                case R.id.navigation_planes:{
+                    transaction.replace(R.id.layoutPrincipal, new PlanFragment());
                     break;
                 }
                 default:
