@@ -1,12 +1,15 @@
 package com.lorenzoch.trainappremaster.model;
 
+import com.lorenzoch.trainappremaster.EnumTipoEstatico;
+
 import java.sql.Time;
 
 public class EjercicioEstaticoTiempo extends EjercicioEstatico {
-    Time tiempoRepeticion, tiempoEntreSeries;
+
+    private Time tiempoRepeticion, tiempoEntreSeries;
 
     EjercicioEstaticoTiempo(){}
-    EjercicioEstaticoTiempo(int id, int series,EnumTipoEstatico tipo, Time tiempo, Time descanso){
+    EjercicioEstaticoTiempo(int id, int series, EnumTipoEstatico tipo, Time tiempo, Time descanso){
 
         super(id,series,tipo);
         setTiempoEntreSeries(descanso);
@@ -18,7 +21,7 @@ public class EjercicioEstaticoTiempo extends EjercicioEstatico {
         return tiempoEntreSeries;
     }
 
-    public void setTiempoEntreSeries(Time tiempoEntreSeries) {
+    private void setTiempoEntreSeries(Time tiempoEntreSeries) {
         this.tiempoEntreSeries = tiempoEntreSeries;
     }
 
@@ -26,7 +29,7 @@ public class EjercicioEstaticoTiempo extends EjercicioEstatico {
         return tiempoRepeticion;
     }
 
-    public void setTiempoRepeticion(Time tiempoRepeticion) {
+    private void setTiempoRepeticion(Time tiempoRepeticion) {
         this.tiempoRepeticion = tiempoRepeticion;
     }
 }

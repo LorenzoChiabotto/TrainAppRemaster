@@ -1,4 +1,4 @@
-package com.lorenzoch.trainappremaster.model;
+package com.lorenzoch.trainappremaster;
 
 public enum EnumTipoDinamico {
     RUNNING,

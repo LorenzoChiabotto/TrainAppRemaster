@@ -1,5 +1,7 @@
 package com.lorenzoch.trainappremaster.model;
 
+import com.lorenzoch.trainappremaster.EnumTipoDinamico;
+
 public class EjercicioDinamico extends Ejercicio{
 
     private EnumTipoDinamico tipo;
@@ -10,7 +12,7 @@ public class EjercicioDinamico extends Ejercicio{
         setTipo(tipo);
     }
 
-    public void setTipo(EnumTipoDinamico tipo) {
+    private void setTipo(EnumTipoDinamico tipo) {
         this.tipo = tipo;
     }
 

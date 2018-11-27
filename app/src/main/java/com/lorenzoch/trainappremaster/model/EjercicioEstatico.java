@@ -1,6 +1,9 @@
 package com.lorenzoch.trainappremaster.model;
 
+import com.lorenzoch.trainappremaster.EnumTipoEstatico;
+
 public class EjercicioEstatico extends Ejercicio{
+
     private int series;
     private EnumTipoEstatico tipo;
 
@@ -17,7 +20,7 @@ public class EjercicioEstatico extends Ejercicio{
         return series;
     }
 
-    public void setSeries(int series) {
+    private void setSeries(int series) {
         this.series = series;
     }
 
@@ -25,7 +28,7 @@ public class EjercicioEstatico extends Ejercicio{
         return tipo;
     }
 
-    public void setTipo(EnumTipoEstatico tipo) {
+    private void setTipo(EnumTipoEstatico tipo) {
         this.tipo = tipo;
     }
 }
