@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "605968381472",
+    "firebase_url": "https://trainappremastered.firebaseio.com",
+    "project_id": "trainappremastered",
+    "storage_bucket": "trainappremastered.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605968381472:android:21b15688e50b024f",
+        "android_client_info": {
+          "package_name": "com.lorenzoch.trainappremaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605968381472-9emdghh12un1mfdp4fkj9bdqq6jod18a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTV0ExtOUnv45N9S7i9SsT_f2mMNCHIlw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

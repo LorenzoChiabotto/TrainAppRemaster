@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-public class Ejercicio implements Parcelable{
+public abstract class Ejercicio implements Parcelable{
 
     private int id;
 
@@ -17,18 +17,6 @@ public class Ejercicio implements Parcelable{
         setId(in.readInt());
     }
 
-    public static final Creator<Ejercicio> CREATOR = new Creator<Ejercicio>() {
-        @Override
-        public Ejercicio createFromParcel(Parcel in) {
-            return new Ejercicio(in);
-        }
-
-        @Override
-        public Ejercicio[] newArray(int size) {
-            return new Ejercicio[size];
-        }
-    };
-
     private void setId(int id) {
         this.id = id;
     }
@@ -36,14 +24,26 @@ public class Ejercicio implements Parcelable{
         return id;
     }
 
+    public static final Creator<Ejercicio> CREATOR = new ClassLoaderCreator<Ejercicio>() {
+        @Override
+        public Ejercicio createFromParcel(Parcel source, ClassLoader loader) {
+            return null;
+        }
+
+        @Override
+        public Ejercicio createFromParcel(Parcel source) {
+            return null;
+        }
+
+        @Override
+        public Ejercicio[] newArray(int size) {
+            return new Ejercicio[0];
+        }
+    };
 
     @NonNull
     @Override
-    public String toString() {
-        return "Ejercicio{"+
-                "id="+ getId()+
-                "}";
-    }
+    public abstract String toString();
 
     @Override
     public int describeContents() {

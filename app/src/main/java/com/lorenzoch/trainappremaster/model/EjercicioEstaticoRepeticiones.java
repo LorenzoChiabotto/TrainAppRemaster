@@ -10,7 +10,7 @@ public class EjercicioEstaticoRepeticiones extends EjercicioEstatico implements 
 
     private int repeticiones;
 
-    EjercicioEstaticoRepeticiones(){}
+    public EjercicioEstaticoRepeticiones(){}
 
     EjercicioEstaticoRepeticiones(int id, int series, EnumTipoEstatico tipo, int repeticiones) {
         super(id, series, tipo);

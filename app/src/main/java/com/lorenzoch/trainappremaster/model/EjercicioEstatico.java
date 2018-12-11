@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 import com.lorenzoch.trainappremaster.EnumTipoEstatico;
 
-public class EjercicioEstatico extends Ejercicio implements Parcelable {
+public abstract class EjercicioEstatico extends Ejercicio implements Parcelable {
 
     private int series;
     private EnumTipoEstatico tipo;
@@ -38,27 +38,9 @@ public class EjercicioEstatico extends Ejercicio implements Parcelable {
         return 0;
     }
 
-    public static final Creator<EjercicioEstatico> CREATOR = new Creator<EjercicioEstatico>() {
-        @Override
-        public EjercicioEstatico createFromParcel(Parcel in) {
-            return new EjercicioEstatico(in);
-        }
-
-        @Override
-        public EjercicioEstatico[] newArray(int size) {
-            return new EjercicioEstatico[size];
-        }
-    };
-
     @NonNull
     @Override
-    public String toString() {
-        return "EjercicioEstatico{"+
-                ", id="+ getId()+
-                ", tipo="+getTipo().name()+
-                ", series="+getSeries()+
-                "}";
-    }
+    public abstract String toString();
 
     public int getSeries() {
         return series;

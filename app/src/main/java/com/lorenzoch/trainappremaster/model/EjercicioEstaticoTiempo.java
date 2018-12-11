@@ -12,7 +12,7 @@ public class EjercicioEstaticoTiempo extends EjercicioEstatico implements Parcel
 
     private long tiempoRepeticion, tiempoEntreSeries;
 
-    EjercicioEstaticoTiempo(){}
+    public EjercicioEstaticoTiempo(){}
     EjercicioEstaticoTiempo(int id, int series, EnumTipoEstatico tipo, long tiempo, long descanso){
         super(id,series,tipo);
         setTiempoRepeticion(tiempo);

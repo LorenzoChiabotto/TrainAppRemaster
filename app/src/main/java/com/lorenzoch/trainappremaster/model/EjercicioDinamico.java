@@ -10,7 +10,7 @@ public class EjercicioDinamico extends Ejercicio implements Parcelable {
 
     private EnumTipoDinamico tipo;
 
-    EjercicioDinamico(){}
+    public EjercicioDinamico(){}
     EjercicioDinamico(int id, EnumTipoDinamico tipo){
         super(id);
         setTipo(tipo);

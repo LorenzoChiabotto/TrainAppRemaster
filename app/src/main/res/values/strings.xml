@@ -19,4 +19,10 @@
     <string name="tiempo">Tiempo</string>
     <string name="distancia">Distancia</string>
     <string name="velocidad">Velocidad</string>
+
+
+
+    <!-- Firestore Values-->
+    <string name="FSrutinas">rutinas</string>
+
 </resources>
