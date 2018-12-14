@@ -20,6 +20,9 @@
     <string name="distancia">Distancia</string>
     <string name="velocidad">Velocidad</string>
 
+    <string name="user_location_permission_explanation">Permisos</string>
+    <string name="user_location_permission_not_granted">No hay permisos</string>
+    <string name="access_token">pk.eyJ1IjoibG9yZW56b2NoaWFib3R0byIsImEiOiJjanBqY21pc2wwNWV6M3ZwaWcxbXU4aTRlIn0.Xg8nlWR3LxFHpite4wwTKA</string>
 
 
     <!-- Firestore Values-->

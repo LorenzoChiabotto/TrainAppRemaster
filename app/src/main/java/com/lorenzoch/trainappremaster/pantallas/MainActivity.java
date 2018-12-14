@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 case R.id.navigation_configuracion:{
-                    transaction.replace(R.id.layoutPrincipal, new HoyFragment());
+                    transaction.replace(R.id.layoutPrincipal, new PlanFragment());
                     break;
                 }
                 case R.id.navigation_planes:{
-                    transaction.replace(R.id.layoutPrincipal, new PlanFragment());
+                    transaction.replace(R.id.layoutPrincipal, new EjDinamicoFragment());
                     break;
                 }
                 default:
