@@ -51,24 +51,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="85dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="85dp"
-            android:layout_weight="1">
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fbPlayHoy"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:clickable="true"
-                android:focusable="true"
- />
-
-        </FrameLayout>
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_playbt"
+            />
 
         <FrameLayout
             android:id="@+id/frameLayout"
@@ -76,7 +65,7 @@
             android:layout_height="match_parent"
             android:layout_margin="25dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/bg_border_swamp"
             android:padding="5dp">
 
             <ListView
