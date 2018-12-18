@@ -9,25 +9,141 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spDias"
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp" />
+        android:id="@+id/rgDias"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rbD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/d"
+                android:textColor="@drawable/tx_color_selector"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <RadioButton
+                android:id="@+id/rbL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/l"
+                android:textColor="@drawable/tx_color_selector"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"/>
+
+        <RadioButton
+                android:id="@+id/rbMA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/m"
+                android:textColor="@drawable/tx_color_selector" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <RadioButton
+                android:id="@+id/rbMIE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/m"
+                android:textColor="@drawable/tx_color_selector" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"/>
+
+        <RadioButton
+                android:id="@+id/rbJ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/j"
+                android:textColor="@drawable/tx_color_selector" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"/>
+
+        <RadioButton
+                android:id="@+id/rbV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/v"
+                android:textColor="@drawable/tx_color_selector" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <RadioButton
+                android:id="@+id/rbS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radiobtn_bck"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/s"
+                android:textColor="@drawable/tx_color_selector" />
+    </RadioGroup>
 
     <include
         android:id="@+id/include"
         layout="@layout/fragment_list"
         android:layout_width="match_parent"
-        android:layout_height="339dp"
-        android:layout_below="@+id/spDias"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rgDias"
+
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
@@ -45,28 +161,33 @@
 
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbEstaticoRep"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/colorPrimaryLigthLigth"
+            android:layout_marginStart="5dp"
+            fab:fab_colorNormal="@color/colorPrimaryLigth"
+            fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
-            fab:fab_title="Estatico Repeticion"
-            android:layout_marginStart="5dp"/>
+            fab:fab_title="@string/estaticorepeticiones" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbEstaticoTie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:fab_colorNormal="@color/colorPrimaryLigthLigth"
+            fab:fab_colorNormal="@color/colorPrimaryLigth"
+            fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
-            fab:fab_title="Estatico Tiempo"
-            android:layout_marginLeft="5dp"/>
+            fab:fab_title="@string/estaticotiempo" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbDinamico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            fab:color="@color/colorPrimaryLigthLigth"
-            fab:fab_colorNormal="@color/colorPrimaryLigthLigth"
+            fab:fab_colorNormal="@color/colorPrimaryLigth"
+            fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
-            fab:fab_title="Dinamico" />
+            fab:fab_title="@string/dinamico" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 </RelativeLayout>
