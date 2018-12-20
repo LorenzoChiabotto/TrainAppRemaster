@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.lorenzoch.trainappremaster.R;
+import com.lorenzoch.trainappremaster.dialogs.CreacionDinamicoDialogFragment;
 
 public class PlanFragment extends Fragment implements View.OnClickListener {
 
@@ -29,13 +31,21 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        DialogFragment newFragment = null;
+        String tag;
+
         switch (v.getId()){
             case(R.id.fbEstaticoRep):{
                 Toast.makeText(getContext(),"Estatico repeticiones", Toast.LENGTH_SHORT).show();break;}
             case(R.id.fbEstaticoTie):{
                 Toast.makeText(getContext(),"Estatico Tiempo", Toast.LENGTH_SHORT).show();break;}
             case(R.id.fbDinamico):{
-                Toast.makeText(getContext(),"Dinamico", Toast.LENGTH_SHORT).show();break;}
+                Toast.makeText(getContext(),"Dinamico", Toast.LENGTH_SHORT).show();
+            
+                newFragment = new CreacionDinamicoDialogFragment();
+                tag = getResources().getString(R.string.dinamico);
+                newFragment.show(getFragmentManager(), tag);
+            }
         }
     }
 }

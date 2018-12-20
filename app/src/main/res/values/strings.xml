@@ -32,11 +32,23 @@
 
     <!-- Firestore Values-->
     <string name="FSrutinas">rutinas</string>
+
+
     <string name="d">D</string>
     <string name="l">L</string>
     <string name="m">M</string>
     <string name="j">J</string>
     <string name="v">V</string>
     <string name="s">S</string>
+    <string name="selecDinamico">Seleccione el tipo de ejercicio</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="cancelar">CANCELAR</string>
 
+
+
+    <string-array name="arrayTest">
+        <item>Tipo 1</item>
+        <item>Tipo 2</item>
+        <item>Tipo 3</item>
+    </string-array>
 </resources>
