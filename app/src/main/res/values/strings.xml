@@ -43,7 +43,9 @@
     <string name="selecDinamico">Seleccione el tipo de ejercicio</string>
     <string name="aceptar">ACEPTAR</string>
     <string name="cancelar">CANCELAR</string>
-
+    <string name="repet">Repeticiones</string>
+    <string name="series">Series</string>
+    <string name="tiempoentre">Descanso entre series</string>
 
 
     <string-array name="arrayTest">

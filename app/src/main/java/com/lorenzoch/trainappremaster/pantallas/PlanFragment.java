@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.lorenzoch.trainappremaster.R;
 import com.lorenzoch.trainappremaster.dialogs.CreacionDinamicoDialogFragment;
+import com.lorenzoch.trainappremaster.dialogs.CreacionEstaticoRepeticionDialogFragment;
+import com.lorenzoch.trainappremaster.dialogs.CreacionEstaticoTiempoDialogFragment;
 
 public class PlanFragment extends Fragment implements View.OnClickListener {
 
@@ -36,15 +38,26 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
 
         switch (v.getId()){
             case(R.id.fbEstaticoRep):{
-                Toast.makeText(getContext(),"Estatico repeticiones", Toast.LENGTH_SHORT).show();break;}
+                //Toast.makeText(getContext(),"Estatico repeticiones", Toast.LENGTH_SHORT).show();
+
+                newFragment = new CreacionEstaticoRepeticionDialogFragment();
+                tag = getResources().getString(R.string.estaticorepeticiones);
+                newFragment.show(getFragmentManager(), tag);
+                break;}
             case(R.id.fbEstaticoTie):{
-                Toast.makeText(getContext(),"Estatico Tiempo", Toast.LENGTH_SHORT).show();break;}
+                //Toast.makeText(getContext(),"Estatico Tiempo", Toast.LENGTH_SHORT).show();
+
+                newFragment = new CreacionEstaticoTiempoDialogFragment();
+                tag = getResources().getString(R.string.estaticotiempo);
+                newFragment.show(getFragmentManager(), tag);
+                break;}
             case(R.id.fbDinamico):{
-                Toast.makeText(getContext(),"Dinamico", Toast.LENGTH_SHORT).show();
-            
+                //Toast.makeText(getContext(),"Dinamico", Toast.LENGTH_SHORT).show();
+
                 newFragment = new CreacionDinamicoDialogFragment();
                 tag = getResources().getString(R.string.dinamico);
                 newFragment.show(getFragmentManager(), tag);
+                break;
             }
         }
     }
