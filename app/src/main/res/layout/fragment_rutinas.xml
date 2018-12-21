@@ -155,7 +155,6 @@
         android:clickable="true"
         android:focusable="true"
         app:fab_addButtonColorPressed="@color/colorPrimaryLigth"
-        app:srcCompat="@drawable/ic_add_black_24dp"
         fab:fab_addButtonColorNormal="@color/colorPrimaryLigth"
         fab:fab_labelStyle="@style/menu_labels_style">
 
@@ -168,6 +167,7 @@
             fab:fab_colorNormal="@color/colorPrimaryLigth"
             fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
+            app:fab_icon="@drawable/ic_repeticion_black_24dp"
             fab:fab_title="@string/estaticorepeticiones" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -177,6 +177,7 @@
             fab:fab_colorNormal="@color/colorPrimaryLigth"
             fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
+            app:fab_icon="@drawable/ic_timer_black_24dp"
             fab:fab_title="@string/estaticotiempo" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
@@ -186,6 +187,7 @@
             fab:fab_colorNormal="@color/colorPrimaryLigth"
             fab:fab_colorPressed="@color/colorPrimaryLigthLigth"
             fab:fab_size="mini"
+            app:fab_icon="@drawable/ic_dinamic_black_24dp"
             fab:fab_title="@string/dinamico" />
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>

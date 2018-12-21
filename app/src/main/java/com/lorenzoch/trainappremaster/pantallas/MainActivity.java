@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -34,13 +33,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 }
                 case R.id.navigation_planes:{
-                    transaction.replace(R.id.layoutPrincipal, new PlanFragment());
+                    transaction.replace(R.id.layoutPrincipal, new RutinasFragment());
                     break;
                 }
                 default:
                     return false;
             }
-
             transaction.addToBackStack(null);
             transaction.commit();
             return true;
@@ -58,5 +56,4 @@ public class MainActivity extends AppCompatActivity {
 
         navigation.setSelectedItemId(R.id.navigation_hoy);
     }
-
 }

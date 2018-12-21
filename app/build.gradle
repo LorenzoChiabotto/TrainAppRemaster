@@ -44,16 +44,21 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-
-    implementation 'com.google.firebase:firebase-core:16.0.6'
-    implementation 'com.google.firebase:firebase-firestore:17.1.4'
-
+    //mapbox
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.7.2'
-
 
     // https://github.com/futuresimple/android-floating-action-button
     implementation 'com.getbase:floatingactionbutton:1.10.1'
 
+
+
+    implementation 'com.google.firebase:firebase-core:16.0.6'
+    //firestore
+    implementation 'com.google.firebase:firebase-firestore:17.1.5'
+
+    //auth
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

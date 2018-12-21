@@ -4,8 +4,19 @@ import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
 import com.lorenzoch.trainappremaster.model.Rutina;
+import com.lorenzoch.trainappremaster.model.Usuario;
 
 public class TrainAppRemaster {
+
+    private Usuario user;
+
+    TrainAppRemaster(){
+    }
+
+    public void Login(){
+
+    }
+
 
 
     public Rutina altaRutina(Rutina rutina){
@@ -13,13 +24,13 @@ public class TrainAppRemaster {
         return rutina;
     }
 
-    public static EjercicioEstaticoRepeticiones altaEstatico(EjercicioEstaticoRepeticiones ejercicio){
+    public EjercicioEstaticoRepeticiones altaEstatico(EjercicioEstaticoRepeticiones ejercicio){
         return ejercicio;
     }
-    public static EjercicioEstaticoTiempo altaEstatico(EjercicioEstaticoTiempo ejercicio){
+    public EjercicioEstaticoTiempo altaEstatico(EjercicioEstaticoTiempo ejercicio){
         return ejercicio;
     }
-    public static EjercicioDinamico altaEjercicioDinamico(EjercicioDinamico ejercicio){
+    public EjercicioDinamico altaEjercicioDinamico(EjercicioDinamico ejercicio){
         return ejercicio;
     }
 
