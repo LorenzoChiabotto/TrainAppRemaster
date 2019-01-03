@@ -71,4 +71,5 @@
 
     <string name="web_client_id">605968381472-9emdghh12un1mfdp4fkj9bdqq6jod18a.apps.googleusercontent.com</string>
     <string name="desconectar">Desconectar</string>
+    <string name="titleApp">TrainApp</string>
 </resources>

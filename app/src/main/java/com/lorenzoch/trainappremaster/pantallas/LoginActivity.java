@@ -48,7 +48,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-        findViewById(R.id.logout).setOnClickListener(this);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -77,9 +76,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.sign_in_button:
                 signIn();
                 break;
-            case R.id.logout:
-                signOut();
-                break;
         }
     }
 
@@ -88,10 +84,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
-        updateUI(null);
-    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
