@@ -1,4 +1,4 @@
-package com.lorenzoch.trainappremaster;
+package com.lorenzoch.trainappremaster.pantallas;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,6 +31,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.lorenzoch.trainappremaster.R;
+import com.lorenzoch.trainappremaster.pantallas.MainActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "LoginActivity";
@@ -155,6 +157,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this,"not logged in " , Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this,"logged in" + account.getUid(), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, MainActivity.class);
+
+            startActivity(intent);
+            finish();
         }
     }
+
+
+
 }
