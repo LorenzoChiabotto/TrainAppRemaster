@@ -12,8 +12,11 @@ import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.lorenzoch.trainappremaster.R;
+import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
+import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
+import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IPrincipal {
 
     BottomNavigationView navigation;
 
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    private void signOut(){
+        FirebaseAuth.getInstance().signOut();
+    }
 
     @Override
     public void onBackPressed() {
@@ -93,7 +99,24 @@ public class MainActivity extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.navigation_hoy);
     }
 
-    private void signOut(){
-        FirebaseAuth.getInstance().signOut();
+
+
+
+
+    //      INTERFACE
+
+    @Override
+    public void addEjercicio(EjercicioDinamico ej) {
+
+    }
+
+    @Override
+    public void addEjercicio(EjercicioEstaticoRepeticiones ej) {
+
+    }
+
+    @Override
+    public void addEjercicio(EjercicioEstaticoTiempo ej) {
+
     }
 }

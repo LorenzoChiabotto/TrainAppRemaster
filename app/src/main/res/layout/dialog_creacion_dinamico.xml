@@ -19,6 +19,7 @@
 
     <Spinner
         android:id="@+id/spinner"
+        android:minWidth="400dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -29,7 +30,7 @@
 
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -44,7 +45,7 @@
             android:textColor="@color/colorPrimaryLigth"/>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/btnAceptar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

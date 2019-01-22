@@ -1,27 +1,32 @@
 package com.lorenzoch.trainappremaster;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.lorenzoch.trainappremaster.model.Ejercicio;
 import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
 import com.lorenzoch.trainappremaster.model.Rutina;
 import com.lorenzoch.trainappremaster.model.Usuario;
 
-public class TrainAppRemaster {
+public class TrainApp {
 
     private Usuario user;
 
-    TrainAppRemaster(){
+    TrainApp(){
     }
 
     public void Login(){
 
     }
 
+    public static void addEjercicio(Ejercicio ejercicio, EnumDiasSemana diaSemana){
 
-
-    public Rutina altaRutina(Rutina rutina){
-
-        return rutina;
+        FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
+        CollectionReference restaurants = mFirestore.collection("rutinas")
+                .document(diaSemana.toString())
+                .collection("ejercicios");
+        restaurants.add(ejercicio);
     }
 
     public EjercicioEstaticoRepeticiones altaEstatico(EjercicioEstaticoRepeticiones ejercicio){
