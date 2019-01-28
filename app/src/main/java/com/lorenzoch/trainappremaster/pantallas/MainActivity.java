@@ -11,7 +11,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.lorenzoch.trainappremaster.EnumDiasSemana;
 import com.lorenzoch.trainappremaster.R;
+import com.lorenzoch.trainappremaster.TrainApp;
+import com.lorenzoch.trainappremaster.model.Ejercicio;
 import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
@@ -106,17 +109,7 @@ public class MainActivity extends AppCompatActivity implements IPrincipal {
     //      INTERFACE
 
     @Override
-    public void addEjercicio(EjercicioDinamico ej) {
-
-    }
-
-    @Override
-    public void addEjercicio(EjercicioEstaticoRepeticiones ej) {
-
-    }
-
-    @Override
-    public void addEjercicio(EjercicioEstaticoTiempo ej) {
-
+    public void addEjercicio(Ejercicio ejercicio, EnumDiasSemana diaSemana) {
+        TrainApp.addEjercicio(ejercicio,diaSemana);
     }
 }

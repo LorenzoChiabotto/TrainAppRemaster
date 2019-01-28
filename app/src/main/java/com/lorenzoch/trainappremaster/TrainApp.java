@@ -23,7 +23,7 @@ public class TrainApp {
     public static void addEjercicio(Ejercicio ejercicio, EnumDiasSemana diaSemana){
 
         FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
-        CollectionReference restaurants = mFirestore.collection("rutinas")
+        CollectionReference restaurants = mFirestore.collection("rutina")
                 .document(diaSemana.toString())
                 .collection("ejercicios");
         restaurants.add(ejercicio);

@@ -13,7 +13,7 @@ public class EjercicioEstaticoTiempo extends EjercicioEstatico implements Parcel
     private long tiempoRepeticion, tiempoEntreSeries;
 
     public EjercicioEstaticoTiempo(){}
-    EjercicioEstaticoTiempo(int id, int series, EnumTipoEstatico tipo, long tiempo, long descanso){
+    public EjercicioEstaticoTiempo(int id, int series, EnumTipoEstatico tipo, long tiempo, long descanso){
         super(id,series,tipo);
         setTiempoRepeticion(tiempo);
         setTiempoEntreSeries(descanso);
@@ -31,6 +31,16 @@ public class EjercicioEstaticoTiempo extends EjercicioEstatico implements Parcel
         super.writeToParcel(dest, flags);
         dest.writeLong(getTiempoRepeticion());
         dest.writeLong(getTiempoEntreSeries());
+    }
+
+    @Override
+    public String[] toStringArray() {
+        String[] retorno = new String[2];
+
+        retorno[0] = getTipo().toString();
+        retorno[1] = getTiempoRepeticion() +" x "+ getSeries() ;
+
+        return retorno;
     }
 
     @Override

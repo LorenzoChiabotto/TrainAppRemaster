@@ -12,7 +12,7 @@ public class EjercicioEstaticoRepeticiones extends EjercicioEstatico implements 
 
     public EjercicioEstaticoRepeticiones(){}
 
-    EjercicioEstaticoRepeticiones(int id, int series, EnumTipoEstatico tipo, int repeticiones) {
+    public EjercicioEstaticoRepeticiones(int id, int series, EnumTipoEstatico tipo, int repeticiones) {
         super(id, series, tipo);
         setRepeticiones(repeticiones);
     }
@@ -26,6 +26,16 @@ public class EjercicioEstaticoRepeticiones extends EjercicioEstatico implements 
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
         dest.writeInt(repeticiones);
+    }
+
+    @Override
+    public String[] toStringArray() {
+        String[] retorno = new String[2];
+
+        retorno[0] = getTipo().toString();
+        retorno[1] = getRepeticiones() +" x "+ getSeries() ;
+
+        return retorno;
     }
 
     @Override

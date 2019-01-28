@@ -8,16 +8,28 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.lorenzoch.trainappremaster.Adapters.RutinaAdapter;
 import com.lorenzoch.trainappremaster.EnumDiasSemana;
+import com.lorenzoch.trainappremaster.EnumTipoDinamico;
+import com.lorenzoch.trainappremaster.EnumTipoEstatico;
 import com.lorenzoch.trainappremaster.R;
 import com.lorenzoch.trainappremaster.dialogs.CreacionDinamicoDialogFragment;
 import com.lorenzoch.trainappremaster.dialogs.CreacionEstaticoRepeticionDialogFragment;
 import com.lorenzoch.trainappremaster.dialogs.CreacionEstaticoTiempoDialogFragment;
+import com.lorenzoch.trainappremaster.model.Ejercicio;
+import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
+import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
+import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class RutinasFragment extends Fragment implements View.OnClickListener {
 
     EnumDiasSemana selectedDay;
+    ListView lista;
 
     @Nullable
     @Override
@@ -36,6 +48,8 @@ public class RutinasFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.rbV).setOnClickListener(this);
         view.findViewById(R.id.rbS).setOnClickListener(this);
 
+        lista = view.findViewById(R.id.lista);
+        getEjerciciosHoy();
         return view;
     }
 
@@ -89,5 +103,17 @@ public class RutinasFragment extends Fragment implements View.OnClickListener {
                 selectedDay = EnumDiasSemana.SABADO;break;
             }
         }
+    }
+
+    public void getEjerciciosHoy(){
+
+        LinkedList<Ejercicio> ejer = new LinkedList<>();
+        ejer.add(new EjercicioEstaticoRepeticiones(0,5,EnumTipoEstatico.FLEXIONES,15));
+        ejer.add( new EjercicioDinamico(1,EnumTipoDinamico.ROLLING));
+        ejer.add( new EjercicioEstaticoTiempo(2,5,EnumTipoEstatico.FLEXIONES,15,15));
+
+        RutinaAdapter data= new RutinaAdapter(getContext(),R.layout.layout_row_rutina,ejer);
+
+        lista.setAdapter(data);
     }
 }

@@ -11,7 +11,7 @@ public class EjercicioDinamico extends Ejercicio implements Parcelable {
     private EnumTipoDinamico tipo;
 
     public EjercicioDinamico(){}
-    EjercicioDinamico(int id, EnumTipoDinamico tipo){
+    public EjercicioDinamico(int id, EnumTipoDinamico tipo){
         super(id);
         setTipo(tipo);
     }
@@ -25,6 +25,16 @@ public class EjercicioDinamico extends Ejercicio implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
         dest.writeString(this.tipo.name());
+    }
+
+    @Override
+    public String[] toStringArray() {
+        String[] retorno = new String[2];
+
+        retorno[0] = getTipo().toString();
+        retorno[1]= "";
+
+        return retorno;
     }
 
 

@@ -34,9 +34,6 @@ public class CreacionDinamicoDialogFragment extends DialogFragment   {
         view.findViewById(R.id.btnAceptar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TrainApp.addEjercicio(new EjercicioEstaticoTiempo(), EnumDiasSemana.DOMINGO);
-                TrainApp.addEjercicio(new EjercicioDinamico(), EnumDiasSemana.DOMINGO);
-                TrainApp.addEjercicio(new EjercicioEstaticoRepeticiones(), EnumDiasSemana.DOMINGO);
             }
         });
 
