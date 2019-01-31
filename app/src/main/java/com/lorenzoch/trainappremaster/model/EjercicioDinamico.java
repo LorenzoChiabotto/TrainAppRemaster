@@ -32,7 +32,7 @@ public class EjercicioDinamico extends Ejercicio implements Parcelable {
         String[] retorno = new String[2];
 
         retorno[0] = getTipo().toString();
-        retorno[1]= "";
+        retorno[1]= " ";
 
         return retorno;
     }

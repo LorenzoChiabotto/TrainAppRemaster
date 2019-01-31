@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.lorenzoch.trainappremaster.EnumDiasSemana;
 import com.lorenzoch.trainappremaster.R;
 import com.lorenzoch.trainappremaster.TrainApp;
@@ -20,6 +29,7 @@ import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
 
 public class MainActivity extends AppCompatActivity implements IPrincipal {
+    private static final String TAG = "MainActivity";
 
     BottomNavigationView navigation;
 
@@ -111,5 +121,46 @@ public class MainActivity extends AppCompatActivity implements IPrincipal {
     @Override
     public void addEjercicio(Ejercicio ejercicio, EnumDiasSemana diaSemana) {
         TrainApp.addEjercicio(ejercicio,diaSemana);
+    }
+
+
+    public void handleDialogEjerciciosResponse(String tag, Ejercicio ejerciciosHoy, EnumDiasSemana diaSemana){
+
+
+        FirebaseFirestore db;
+
+        db = FirebaseFirestore.getInstance();
+
+        db.collection().document().collection(getString(R.string.RutinaColection))
+                .add(ejerciciosHoy)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error adding document", e);
+                    }
+                });
+
+
+
+        FragmentManager fm = getSupportFragmentManager();
+
+        FragmentTransaction transaction = fm.beginTransaction();
+
+        txtTitulo.setText(tag);
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(getString(R.string.intent_message), ejercicios);
+        fragment.setArguments(bundle);
+
+        transaction.replace(R.id.frameLayout, new RutinasFragment(), tag);
+
+
+        transaction.commit();
     }
 }
