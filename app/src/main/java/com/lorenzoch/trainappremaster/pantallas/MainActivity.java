@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,6 +28,8 @@ import com.lorenzoch.trainappremaster.model.Ejercicio;
 import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
+
+import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity implements IPrincipal {
     private static final String TAG = "MainActivity";
@@ -124,43 +127,20 @@ public class MainActivity extends AppCompatActivity implements IPrincipal {
     }
 
 
-    public void handleDialogEjerciciosResponse(String tag, Ejercicio ejerciciosHoy, EnumDiasSemana diaSemana){
-
-
-        FirebaseFirestore db;
-
-        db = FirebaseFirestore.getInstance();
-
-        db.collection().document().collection(getString(R.string.RutinaColection))
-                .add(ejerciciosHoy)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-
-
-
+    public void handleDialogEjerciciosResponse(String tag, Ejercicio ejercicio, EnumDiasSemana diaSemana){
+        Log.d(TAG, "handleDialogEjerciciosResponse: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(getString(R.string.bundleEj),ejercicio);
+        bundle.putSerializable(getString(R.string.bundleDia),diaSemana);
+        
+        RutinasFragment fragment=new RutinasFragment();
+        fragment.setArguments(bundle);
         FragmentManager fm = getSupportFragmentManager();
-
         FragmentTransaction transaction = fm.beginTransaction();
 
-        txtTitulo.setText(tag);
-
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(getString(R.string.intent_message), ejercicios);
-        fragment.setArguments(bundle);
-
-        transaction.replace(R.id.frameLayout, new RutinasFragment(), tag);
-
+        transaction.replace(R.id.layoutPrincipal, fragment, tag);
 
         transaction.commit();
+
     }
 }

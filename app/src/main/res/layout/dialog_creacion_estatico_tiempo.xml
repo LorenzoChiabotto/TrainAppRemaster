@@ -139,7 +139,7 @@
 
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -154,7 +154,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/btnAceptar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

@@ -12,28 +12,43 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.lorenzoch.trainappremaster.EnumDiasSemana;
+import com.lorenzoch.trainappremaster.EnumTipoDinamico;
 import com.lorenzoch.trainappremaster.R;
 import com.lorenzoch.trainappremaster.TrainApp;
+import com.lorenzoch.trainappremaster.model.Ejercicio;
 import com.lorenzoch.trainappremaster.model.EjercicioDinamico;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoRepeticiones;
 import com.lorenzoch.trainappremaster.model.EjercicioEstaticoTiempo;
 import com.lorenzoch.trainappremaster.pantallas.IPrincipal;
 
-public class CreacionDinamicoDialogFragment extends DialogFragment   {
+import java.util.LinkedList;
 
+public class CreacionDinamicoDialogFragment extends DialogFragment   {
+    private static final String TAG = "CreacionDinamicoDialogF";
     IPrincipal iPrincipal;
+
+    EnumDiasSemana dia;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dialog_creacion_dinamico, container, false);
 
+        Bundle bundle = getArguments();
+        if (bundle!= null){
+            dia = (EnumDiasSemana) bundle.getSerializable(getString(R.string.bundleDia));
+        }
+
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-        ArrayAdapter<String> data=new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.arrayTest));
+        ArrayAdapter<String> data=new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.arrayTest));
         spinner.setAdapter(data);
 
         view.findViewById(R.id.btnAceptar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EjercicioDinamico ej =new  EjercicioDinamico(15,EnumTipoDinamico.CYCLING);
+                iPrincipal.handleDialogEjerciciosResponse(TAG,ej,dia);
+                dismiss();
             }
         });
 

@@ -73,4 +73,7 @@
     <string name="desconectar">Desconectar</string>
     <string name="titleApp">TrainApp</string>
     <string name="RutinaColection">Rutina</string>
+    <string name="intent_message">IntentMessage</string>
+    <string name="bundleEj">bundleEjercicios</string>
+    <string name="bundleDia">bundleDia</string>
 </resources>

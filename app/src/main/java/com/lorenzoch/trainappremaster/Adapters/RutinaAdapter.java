@@ -12,6 +12,7 @@ import com.lorenzoch.trainappremaster.R;
 import com.lorenzoch.trainappremaster.model.Ejercicio;
 import com.lorenzoch.trainappremaster.model.EjercicioEstatico;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class RutinaAdapter extends ArrayAdapter {
@@ -23,7 +24,7 @@ public class RutinaAdapter extends ArrayAdapter {
         this.context = context;
     }
 
-    public RutinaAdapter(Context context, int resource, List items) {
+    public RutinaAdapter(Context context, int resource, LinkedList items) {
         super(context, resource, items);
         this.context = context;
     }
